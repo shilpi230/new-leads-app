@@ -1,0 +1,12 @@
+<%= form_tag new_lead_path, method: :get, id: "search-form" do %>
+<%= text_field_tag :query, params[:query] %>
+<%= submit_tag "Search", name: nil %>
+<% end %>
+
+
+<% @pg_search_documents.each do |pg_search_document| %>
+    <li><%= link_to pg_search_document.searchable.name, "../#{(pg_search_document.searchable.class).to_s.downcase!.pluralize}/#{pg_search_document.searchable.id}" %></li>
+  <% end %>
+  
+
+

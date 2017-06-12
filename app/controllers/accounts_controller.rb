@@ -19,10 +19,15 @@ def create
     end
 end
 
+def list_account_contacts
+  @records =  PgSearch.multisearch(params[:value])
+  render json: @records
+end
+
   private
 
   def account_params
     params.require(:account).permit(:name, :location)
   end
-  
+
 end

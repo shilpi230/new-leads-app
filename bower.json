@@ -1,0 +1,27 @@
+{
+  "name": "New Leads App",
+  "version": "1.0.4",
+  "homepage": "https://github.com/dianameow/new-leads-app",
+  "authors": [
+    ""
+  ],
+  "description": "",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    ""
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

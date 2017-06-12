@@ -2,12 +2,15 @@ Rails.application.routes.draw do
   resources :leads
   resources :contacts
   resources :accounts
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+  root 'home#index'
+  get "list_accounts" => "accounts#list_account_contacts", as: "list_account_contacts"
   # root 'welcome#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

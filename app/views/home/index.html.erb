@@ -22,9 +22,9 @@
                 <h4 class="modal-title">Account Name</h4>
               </div>
               <div class="modal-body">
-                <%= text_field_tag "account_name", "", placeholder: "For e.g. Company 1", id: "account_name" %>
+                <input id="search_value" type="text"/><button type="button" id="txt_Search">Search</button>
                 <div id="search-results">
-                  
+                  <ul id="lists"></ul>
                 </div>
               </div>
               <div class="modal-footer">

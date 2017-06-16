@@ -2,9 +2,9 @@ default: &default
       adapter: postgresql
       encoding: unicode
       pool: 5
-      username: pguser
-      password: pg@123
-      host:     localhost
+      username: <%= ENV['USERNAME'] %>
+      password: <%= ENV['PASSWORD'] %>
+      host:     <%= ENV['IP'] %>
 
 development:
   <<: *default

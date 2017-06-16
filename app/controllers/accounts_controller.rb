@@ -24,6 +24,12 @@ def list_account_contacts
   render json: @records
 end
 
+def list_contacts
+  @account = Account.find(params[:value])
+  @records = @account.contacts
+  render json: @records
+end
+
   private
 
   def account_params

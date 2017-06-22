@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
-  get "list_accounts" => "accounts#list_account_contacts", as: "list_account_contacts"
+  get "list_accounts" => "accounts#list_accounts", as: "list_accounts"
   get "list_contacts" => "accounts#list_contacts", as: "list_contacts"
   # root 'welcome#index'
 

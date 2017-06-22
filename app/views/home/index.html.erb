@@ -22,9 +22,29 @@
                 <h4 class="modal-title">Account Name</h4>
               </div>
               <div class="modal-body">
-                <input id="search_value" type="text"/><button type="button" id="txt_Search">Search</button>
-                <div id="search-results">
-                  <ul id="lists"></ul>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input id="acc_search_value" type="text" class="form-control" placeholder="Account Name"/>
+                    </div>
+                    <div class="form-group">
+                      <input id="cont_search_value" type="text" class="form-control" placeholder="Contact Name" />
+                    </div>
+                    <div class="form-group">
+                      <button type="button" id="acc_search" class="btn btn-success">Search Account</button>
+                    </div>
+                    <div class="form-group">
+                      <div id="search-results">
+                        <!-- <ul id="lists"></ul> -->
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="col-md-6">
+                      <input id="cont_search_value" type="text"/><button type="button" id="cont_search">Search Contact</button>
+                      <div id="search-results">
+                        <ul id="lists"></ul>
+                      </div>
+                  </div> -->
                 </div>
               </div>
               <div class="modal-footer">

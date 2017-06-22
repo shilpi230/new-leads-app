@@ -19,16 +19,37 @@ def create
     end
 end
 
-def list_account_contacts
-  @records =  PgSearch.multisearch(params[:value])
-  render json: @records
+def list_accounts
+  @accounts =  Account.search(params[:value])
+  @values = []
+  if @accounts.present?
+    @accounts.each do |account|
+      @values.push(account.as_json(include: { contacts: { only: [:id, :name] }}, only: [:id, :name]))
+    end
+  end
+  render json: @values
 end
 
 def list_contacts
-  @account = Account.find(params[:value])
-  @records = @account.contacts
-  render json: @records
+  @contacts =  Contact.search(params[:value])
+  @values = []
+  if @contacts.present?
+    @contacts.each do |contact|
+      @values.push(contact.as_json(include: { account: { only: [:name] }}, only: [:id, :name]))
+    end
+  end
+  render json: @values
 end
+
+# def list_contacts
+#   @records =  PgSearch.multisearch(params[:value])
+#   render json: @records
+# end
+
+# def list_account_contacts
+#   @records =  PgSearch.multisearch(params[:value])
+#   render json: @records
+# end
 
   private
 

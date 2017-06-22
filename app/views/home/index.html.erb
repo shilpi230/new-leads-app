@@ -6,8 +6,20 @@
   <body>
     <div class="container">
       <div id="account_field">
-        <%= text_field_tag "account_name", "", placeholder: "Account or Contact Name" %>
-        <span><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Search Account/Contact Name</button>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <%= text_field_tag "account_name", "", class: "form-control", placeholder: "Account Name" %>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <%= text_field_tag "contact_name", "", class: "form-control", placeholder: "Contact Name" %>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <span><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Search Account/Contact Name</button>
+          </div>
       </div>
         <!-- Trigger the modal with a button -->
 

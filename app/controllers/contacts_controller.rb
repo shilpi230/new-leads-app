@@ -19,10 +19,17 @@ def create
     end
 end
 
+def name
+  @contact = Contact.find(params[:value])
+  @names = []
+  @names.push(@contact.as_json(include: { account: { only: [:name] }}, only: [:name]))
+  render json:  @names
+end
+
   private
 
   def contact_params
     params.require(:contact).permit(:account_id, :name, :contact_number)
   end
-  
+
 end

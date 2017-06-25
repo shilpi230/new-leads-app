@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get "list_accounts" => "accounts#list_accounts", as: "list_accounts"
   get "list_contacts" => "accounts#list_contacts", as: "list_contacts"
+  get "name" => "contacts#name", as: "name"
   # root 'welcome#index'
 
 

@@ -18,8 +18,8 @@ jQuery(function($){
 
   function fill_names(data, obj)
   {
-    console.log(data[0]["name"]);
-    console.log(data[0]["account"]["name"]);
+    // console.log(data[0]["name"]);
+    // console.log(data[0]["account"]["name"]);
       $('#account_name').val(data[0]["account"]["name"]);
       $('#contact_name').val(data[0]["name"]);
   }
@@ -79,6 +79,41 @@ function fill_contacts(data, obj)
   }
 }
 
+
+$("select#category_id").change(function(){
+  $("select#product").empty().trigger('change');
+  select_has_changed(this);
+});
+
+
+function select_has_changed(obj)
+{
+  var value = $(obj).val();
+  console.log(value);
+  $.ajax({
+   url: "/list_products",
+   data: {value: value},
+   type: "GET",
+   success: function (data) { fill_up_products(data, obj) }
+ });
+}
+
+function fill_up_products(data, obj)
+{
+  // $('select#product').append($('<option>',
+  //  {
+  //     value: "",
+  //     text : "All"
+  // }));
+  for (var i = 0; i < data.length; i++) {
+    var obj = data[i];
+    $('select#product').append($('<option>',
+     {
+        value: obj["id"],
+        text : obj["name"]
+    }));
+  }
+}
 
 
 });

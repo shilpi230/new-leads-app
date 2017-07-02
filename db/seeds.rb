@@ -7,3 +7,15 @@ Contact.create!(name:"Company 1 Employee 2", contact_number:"123456", account_id
 Contact.create!(name:"Company 1 Employee 3", contact_number:"123456", account_id: 1)
 Contact.create!(name:"Company 2 Employee", contact_number:"123456", account_id: 2)
 Contact.create!(name:"Company 3 Employee", contact_number:"123456", account_id: 3)
+
+first_category = Category.create!(name:"Category 1")
+second_category = Category.create!(name:"Category 2")
+third_category = Category.create!(name:"Category 3")
+
+Product.create!(name:"Category 1 Product 1", category_id: first_category.id)
+Product.create!(name:"Category 1 Product 2", category_id: first_category.id)
+Product.create!(name:"Category 2 Product 1", category_id: second_category.id)
+Product.create!(name:"Category 2 Product 2", category_id: second_category.id)
+Product.create!(name:"Category 2 Product 3", category_id: second_category.id)
+Product.create!(name:"Category 3 Product 1", category_id: third_category.id)
+Product.create!(name:"Category 3 Product 2", category_id: third_category.id)
